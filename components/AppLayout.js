@@ -1,10 +1,11 @@
-import React,{useState} from 'react'
+import React from 'react'
 import propTypes from 'prop-types'
 import Link from 'next/link'
 import {Menu, Input,Row,Col} from 'antd'
 import LoginForm from './LoginForm'
 import UserProfile from './UserProfile'
 import styled from 'styled-components'
+import {useSelector} from 'react-redux'
 
 const SearchInput = styled(Input.Search)`
 verticalAlign: middle;
@@ -14,7 +15,10 @@ verticalAlign: middle;
 // <SearchInput enterButton style={style}/>
 
 function AppLayout({children}) {
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const isLoggedIn = useSelector(state => state.user.isLoggedIn)
+    //redux로 뭉쳐놨으니 setState 와 props 값 삭제 ㄱㄴ
+    //state 라고 써져있으나 사실상 reducer 불러오는거
+
     return (
         <div>
             <Menu mode='horizontal'>
@@ -33,7 +37,7 @@ function AppLayout({children}) {
             </Menu>
             <Row gutter={8}>
                 <Col xs={24} md={6}>
-                {isLoggedIn ? <UserProfile setIsLoggedIn={setIsLoggedIn}/> : <LoginForm setIsLoggedIn={setIsLoggedIn}/>}
+                {isLoggedIn ? <UserProfile/> : <LoginForm/>}
                 </Col>
                 <Col xs={24} md={12}>
                 {children}
