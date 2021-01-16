@@ -6,12 +6,13 @@ import 'antd/dist/antd.css';
 function App({Component}) {
     return (
         <>
-            <Head><title>Noah-Blog</title>
+            <Head>
+                <title>Noah-Blog</title>
             </Head>
             <Component/>
         </>
     )
-};
+}
 App.propTypes = {
     Component: propTypes.elementType.isRequired,
 }

@@ -4,6 +4,14 @@ import Link from 'next/link'
 import {Menu, Input,Row,Col} from 'antd'
 import LoginForm from './LoginForm'
 import UserProfile from './UserProfile'
+import styled from 'styled-components'
+
+const SearchInput = styled(Input.Search)`
+verticalAlign: middle;
+`
+
+// const style = useMemo(() => ({verticalAlign: 'middle'}), [])
+// <SearchInput enterButton style={style}/>
 
 function AppLayout({children}) {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -17,7 +25,7 @@ function AppLayout({children}) {
                     <Link href="/profile"><a>profile</a></Link>
                 </Menu.Item>
                 <Menu.Item>
-                    <Input.Search enterButton style={{verticalAlign: 'middle'}}/>
+                    <SearchInput enterButton/>
                 </Menu.Item>
                 <Menu.Item>
                     <Link href="/signup"><a>signup</a></Link>
@@ -25,7 +33,7 @@ function AppLayout({children}) {
             </Menu>
             <Row gutter={8}>
                 <Col xs={24} md={6}>
-                {isLoggedIn ? <UserProfile/> : <LoginForm/>}
+                {isLoggedIn ? <UserProfile setIsLoggedIn={setIsLoggedIn}/> : <LoginForm setIsLoggedIn={setIsLoggedIn}/>}
                 </Col>
                 <Col xs={24} md={12}>
                 {children}
