@@ -11,11 +11,9 @@ function UserProfile() {
     return (
         <Card
             actions={[
-                <div key="div" style={{display:'grid',gridTemplateColumns:'repeat(3, 1fr)'}}>
-                    <SettingOutlined style={{fontSize:'1rem'}} key="setting" />
-                    <EditOutlined style={{fontSize:'1rem'}} key="edit" />
+                    <SettingOutlined style={{fontSize:'1rem'}} key="setting" />,
+                    <EditOutlined style={{fontSize:'1rem'}} key="edit" />,
                     <EllipsisOutlined style={{fontSize:'1rem'}} key="ellipsis" />
-                </div>
             ]}
         >
             <Card.Meta
