@@ -1,26 +1,25 @@
 import React,{useCallback} from 'react'
 import { Card, Avatar,Button } from 'antd';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-import {useDispatch} from 'react-redux'
-import {logoutAction} from '../reducers/user'
+import {useDispatch,useSelector} from 'react-redux'
+import {logoutRequestAction} from '../reducers/user'
 
 function UserProfile() {
     const dispatch = useDispatch()
+    const {me,logOutLoading} = useSelector(state => state.user)
     const onLogOut = useCallback(() => {
-        dispatch(logoutAction())},[])
+        dispatch(logoutRequestAction())},[])
     return (
         <Card
             actions={[
-                    <SettingOutlined style={{fontSize:'1rem'}} key="setting" />,
-                    <EditOutlined style={{fontSize:'1rem'}} key="edit" />,
-                    <EllipsisOutlined style={{fontSize:'1rem'}} key="ellipsis" />
-            ]}
+                <div key="twit">짹짹<br />{me.Posts.length}</div>,
+                <div key="following">팔로잉<br />{me.Followings.length}</div>,
+                <div key="follower">팔로워<br />{me.Followers.length}</div>,            ]}
         >
             <Card.Meta
-                avatar={<Avatar>Noahtang</Avatar>}
-                title="Noah"
+                avatar={<Avatar>me.nickname[0]</Avatar>}
+                title={me.nickname}
             />
-            <Button onClick={onLogOut}>Log out</Button>
+            <Button onClick={onLogOut} loading={logOutLoading}>Log out</Button>
         </Card>
     )
 }
