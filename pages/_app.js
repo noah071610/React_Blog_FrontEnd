@@ -10,7 +10,7 @@ function App({ Component }) {
   return (
     <>
       <Head>
-        ,<title>Noah-Blog</title>
+        <title>Noah-Blog</title>
       </Head>
       <Component />
     </>

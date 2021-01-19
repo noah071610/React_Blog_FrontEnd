@@ -18,3 +18,4 @@ dispatch를 여러번 가능하게 해주는것
 npm rm redux-thunk
 HOC 하이 오더 컴포넌트 (그.. app 같은놈)
 Arrow 펑션은 뭐 return 이 필요없는듯
+리듀서에서 불변성 지키면서 지우는거는 filter 로 많이함

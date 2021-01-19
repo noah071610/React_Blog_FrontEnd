@@ -1,16 +1,15 @@
+/* eslint-disable react/require-default-props */
 import React, { useState, useCallback } from 'react';
 import { Form, Input, Checkbox, Button } from 'antd';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 
+import { useDispatch, useSelector } from 'react-redux';
 import AppLayout from '../components/AppLayout';
 import useInput from '../hooks/useInput';
 import { SIGN_UP_REQUEST } from '../reducers/user';
-import { useDispatch, useSelector } from 'react-redux';
 
-const TextInput = ({ value }) => {
-  return <div>{value}</div>;
-};
+const TextInput = ({ value }) => <div>{value}</div>;
 
 TextInput.propTypes = {
   value: PropTypes.string,
