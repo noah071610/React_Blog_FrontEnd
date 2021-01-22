@@ -21,7 +21,7 @@ const Global = createGlobalStyle`
   .ant-col:last-child {
     padding-right: 0 !important;
   }
-`;
+`; // ant scroll X 해결방법
 
 const SearchInput = styled(Input.Search)`
   verticalalign: middle;

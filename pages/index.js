@@ -12,7 +12,6 @@ function Home() {
   // = const mainPosts = useSelector(state => state.post.mainPosts)
 
   useEffect(() => {
-    console.log('1');
     dispatch({
       type: LOAD_POSTS_REQUEST,
     });
@@ -20,11 +19,9 @@ function Home() {
 
   useEffect(() => {
     function onScroll() {
-      console.log(
-        window.scrollY,
-        document.documentElement.clientHeight,
-        document.documentElement.scrollHeight,
-      );
+      // window.scrollY : 내가 스크롤한 길이
+      // document.documentElement.clientHeight : 클라이언트가 보고있는 길이
+      // document.documentElement.scrollHeight : 전체 페이지 길이
       if (
         window.scrollY + document.documentElement.clientHeight >
         document.documentElement.scrollHeight - 300

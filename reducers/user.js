@@ -110,7 +110,7 @@ const reducer = (state = initialState, action) =>
         break;
       case LOG_IN_SUCCESS: // ===========4. from saga generator
         draft.logInLoading = false;
-        draft.me = dummyUser(action.data);
+        draft.me = action.data;
         draft.logInDone = true;
         break;
       case LOG_IN_FAILURE:

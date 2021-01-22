@@ -1,9 +1,9 @@
 /* eslint-disable react/require-default-props */
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Form, Input, Checkbox, Button } from 'antd';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-
+import Router from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import AppLayout from '../components/AppLayout';
 import useInput from '../hooks/useInput';
@@ -17,8 +17,25 @@ TextInput.propTypes = {
 
 const Signup = () => {
   const dispatch = useDispatch();
-  const { signUpLoading } = useSelector(state => state.user);
+  const { signUpLoading, signUpDone, signUpError, me } = useSelector(state => state.user);
 
+  useEffect(() => {
+    if (me && me.id) {
+      Router.replace('/'); // push랑 다른점은 뒤로가기 했을때 그 페이지가 나오지 않음
+    }
+  }, [me && me.id]);
+
+  useEffect(() => {
+    if (signUpDone) {
+      Router.replace('/');
+    }
+  }, [signUpDone]);
+
+  useEffect(() => {
+    if (signUpError) {
+      alert(signUpError);
+    }
+  }, [signUpError]);
   const [term, setTerm] = useState(false);
   const [termError, setTermError] = useState(false);
   const [passwordCheck, setPasswordCheck] = useState('');
@@ -38,7 +55,7 @@ const Signup = () => {
     console.log(`Sign up Success ${email},${nickname},${password}`);
     dispatch({
       type: SIGN_UP_REQUEST,
-      data: { email, password, nickname },
+      data: { email, password, nickname }, // 이런식은 can become a req.body on the server part
     });
   }, [password, passwordCheck, term]);
 
