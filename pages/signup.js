@@ -53,7 +53,7 @@ const Signup = () => {
       return setTermError(true);
     }
     console.log(`Sign up Success ${email},${nickname},${password}`);
-    dispatch({
+    return dispatch({
       type: SIGN_UP_REQUEST,
       data: { email, password, nickname }, // 이런식은 can become a req.body on the server part
     });
