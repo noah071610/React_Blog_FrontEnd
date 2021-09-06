@@ -1,21 +1,19 @@
 
-**📥 React_Blog_FrontEnd는 React_NoahWorld의 프론트엔드 부분입니다.**
+# 📥 현재 사용중이 아닌 참고 또는 기록용 저장소입니다.
 
-처음에 개인 블로그 프로젝트의 클라이언트단, 서버단을 따로 분리하려고 레포지토리를 만들었습니다.  <br/>
-하지만 concrrently 라이브러리를 알게되어 효율적이게 서버와 클라이언트를 동시에 관리할 수 있게되었고 <br/>
-두개를 묶어서 관리하는게 효율적이라고 판단해서, 레포지토리를 새로 개설해 개발을 이어나갔습니다.
+완성된 사이트 저장소는 [Noah World Repository](https://github.com/noah071610/Next_Noahworld) 로 접속해주세요.
 
 <br/>
 
+## 😽 My projects
 
-**😙 마지막 업데이트를 완료한 클라이언트단과 서버까지 있는 Noah-World Blog 를 확인해주세요.**
+🥇 Fall IN Asia (Main⭐)
+[Fall IN Asia Repository](https://github.com/noah071610/Fall-IN-Asia)
 
-- 👉 [프로젝트 Noah-World 바로가기](https://github.com/noah071610/Next_Noahworld)
+🥈 Noah World
+[Noah World Repository](https://github.com/noah071610/Next_Noahworld)
 
-<br/>
-
-**😉 다른 프로젝트에 관심이 있으신가요?**
-
-- 👉 [프로젝트 My-Seoul-Guide 바로가기](https://github.com/noah071610/My-Seoul-Guide)
+🥉 My Seoul Guide
+[My Seoul Guide Repository](https://github.com/noah071610/My-Seoul-Guide)
 
 <br/><br/><br/><br/>
